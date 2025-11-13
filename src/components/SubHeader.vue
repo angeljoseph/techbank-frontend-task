@@ -29,8 +29,8 @@
           <h2>{{ title }}</h2>
           <div class="card-row">
             <div class="row-text" v-if="subtitle">{{ subtitle }}</div>
-            <div class="row-action">
-              <button data-v-f93a2eb3="" @click="goToContact" class="footer-btn"><span data-v-f93a2eb3="">View Products</span><img data-v-f93a2eb3="" class="btn-arrow-img" src="../assets/img/Frame 24.png" alt="arrow"></button>
+              <div class="row-action">
+              <button data-v-f93a2eb3="" @click="goToContact" class="footer-btn"><span data-v-f93a2eb3="">View Products</span><img data-v-f93a2eb3="" class="btn-arrow-img" :src="btnArrow" alt="arrow"></button>
             </div>
           </div>
         </div>
@@ -133,6 +133,9 @@ const centerMediaSrc = computed2(() => {
   const p = props.centerMedia || ''
   return p ? (p.startsWith('/') ? p : new URL(p, import.meta.url).href) : ''
 })
+
+// arrow used in the View Products button - resolve so bundler rewrites path
+const btnArrow = new URL('../assets/img/Frame 24.png', import.meta.url).href
 </script>
 
 <style scoped>

@@ -3,9 +3,9 @@
     <div class="container">
       <div class="footer-header">
         <div class="header-left">
-          <div class="logo">
-  <img src="../assets/Group (1).png" alt="logo" class="logo-img" />
-      </div>
+      <div class="logo">
+  <img src="/images/group-1.png" alt="logo" class="logo-img" />
+    </div>
         </div>
         <div class="header-right">
           <p>support@techbank.example</p>
@@ -43,16 +43,16 @@
       <div class="footer-bottom">
         <div class="bottom-col social">
           <a href="#" aria-label="x" class="social-link">
-            <img src="../assets/img/x.png" alt="X" class="social-icon" />
+            <img src="/images/x.png" alt="X" class="social-icon" />
           </a>
           <a href="#" aria-label="linkedin" class="social-link">
-            <img src="../assets/img/LinkedinLogo.png" alt="LinkedIn" class="social-icon" />
+            <img src="/images/linkedin.png" alt="LinkedIn" class="social-icon" />
           </a>
           <a href="#" aria-label="instagram" class="social-link">
-            <img src="../assets/img/instagram.png" alt="Instagram" class="social-icon" />
+            <img src="/images/instagram.png" alt="Instagram" class="social-icon" />
           </a>
            <a href="#" aria-label="youtube" class="social-link">
-            <img src="../assets/img/youtube.png" alt="Youtube" class="social-icon" />
+            <img src="/images/youtube.png" alt="Youtube" class="social-icon" />
           </a>
         </div>
         <div class="bottom-col date">© 2025 Techbank</div>
@@ -69,6 +69,12 @@
 <script setup>
 // small presentational footer — resolve background image for Vite
 const footerBg = new URL('../assets/img/Group 1597883874.png', import.meta.url).href
+// resolve images used in template
+const logoSrc = new URL('../assets/Group (1).png', import.meta.url).href
+const socialX = new URL('../assets/img/x.png', import.meta.url).href
+const socialLinkedin = new URL('../assets/img/LinkedinLogo.png', import.meta.url).href
+const socialInsta = new URL('../assets/img/instagram.png', import.meta.url).href
+const socialYouTube = new URL('../assets/img/youtube.png', import.meta.url).href
 // provide today's date for the footer-bottom
 const today = new Date().toLocaleDateString();
 // arrow image for CTA (reuse product arrow)

@@ -2,10 +2,10 @@
   <header class="navbar">
     <nav class="container">
       <!-- left: logo -->
-      <div class="logo"  @click.prevent="goToHomeHash('#home')">
+    <div class="logo"  @click.prevent="goToHomeHash('#home')">
 
-  <img src="../assets/Group (1).png" alt="logo" class="logo-img" />
-      </div>
+  <img src="/images/group-1.png" alt="logo" class="logo-img" />
+    </div>
 
       <!-- center: nav links (hidden on small screens) -->
       <ul class="nav-links">
@@ -45,6 +45,8 @@
 import { ref } from 'vue'
 import { useRouter } from 'vue-router'
 const router = useRouter()
+// resolve logo asset so Vite includes it in the build
+const logoSrc = new URL('../assets/Group (1).png', import.meta.url).href
 const menuOpen = ref(false)
 const toggleMenu = () => { menuOpen.value = !menuOpen.value }
 const goToContact = () => { router.push('/contact') }
