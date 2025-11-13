@@ -1,0 +1,82 @@
+@import './base.css';
+@font-face {
+  font-family: 'Ninetea';
+  /* use a relative path so Vite can resolve the asset at build time */
+  /* actual files are stored under ./fonts/ninetea/ per workspace scan */
+  src: url('./fonts/ninetea/Ninetea-Regular.woff2') format('woff2'),
+       url('./fonts/ninetea/Ninetea-Regular.woff') format('woff'),
+       url('./fonts/ninetea/Ninetea-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* SemiBold / 600 */
+@font-face {
+  font-family: 'Ninetea';
+  /* fallback to the regular if semibold not available; keep existing path if you add semibold */
+  src: url('./fonts/ninetea/Ninetea-Regular.woff2') format('woff2');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* NYXERIN font family */
+@font-face {
+  font-family: 'NYXERIN';
+  /* project contains NYXERIN.otf under ./fonts/ninetea/ */
+  src: url('./fonts/ninetea/NYXERIN.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'NYXERIN';
+  /* bold variant not present — reuse the same OTF file as fallback */
+  src: url('./fonts/ninetea/NYXERIN.otf') format('opentype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+html, body {
+  min-height: 100%;
+  background-color: #1e1e1e;
+}
+ #app {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  font-weight: normal;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 1rem;
+} 
+
+a,
+.green {
+  text-decoration: none;
+  color: hsla(160, 100%, 37%, 1);
+
+
+  transition: 0.4s;
+  padding: 3px;
+}
+
+@media (hover: hover) {
+  a:hover {
+    background-color: hsla(160, 100%, 37%, 0.2);
+  }
+}
+
+@media (min-width: 1024px) {
+  /* avoid making <body> a flex container — center the app via #app instead */
+  body {
+    display: block;
+  }
+
+  /* center the application at large screens and keep internal padding */
+  /* #app rules intentionally commented out to avoid empty ruleset lint errors
+     max-width: 1280px; margin: 0 auto; padding: 0 2rem; */
+}
