@@ -2,17 +2,18 @@
   <header class="navbar">
     <nav class="container">
       <!-- left: logo -->
-      <div class="logo">
+      <div class="logo"  @click.prevent="goToHomeHash('#home')">
+
   <img src="../assets/Group (1).png" alt="logo" class="logo-img" />
       </div>
 
       <!-- center: nav links (hidden on small screens) -->
       <ul class="nav-links">
-        <li><a href="#home">Home</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#products">Products</a></li>
-        <li><a href="#technologies">Technologies</a></li>
-        <li><a href="#contact">Contact</a></li>
+        <li><a @click.prevent="goToHomeHash('#home')">Home</a></li>
+        <li><a @click.prevent="goToHomeHash('#about')">About</a></li>
+        <li><a @click.prevent="goToHomeHash('#products')">Products</a></li>
+        <li><a @click.prevent="goToHomeHash('#technologies')">Technologies</a></li>
+        <li><a @click.prevent="goToHomeHash('#contact')">Contact</a></li>
       </ul>
 
       <!-- right: CTA and mobile toggle -->
@@ -30,11 +31,11 @@
     <!-- mobile menu -->
     <div v-if="menuOpen" class="mobile-menu">
       <ul>
-        <li><a href="#home" @click="toggleMenu">Home</a></li>
-        <li><a href="#about" @click="toggleMenu">About</a></li>
-        <li><a href="#products" @click="toggleMenu">Products</a></li>
-        <li><a href="#technologies" @click="toggleMenu">Technologies</a></li>
-        <li><a href="#contact" @click="toggleMenu">Contact</a></li>
+        <li><a @click.prevent="goToHomeHash('#home'); toggleMenu()">Home</a></li>
+        <li><a @click.prevent="goToHomeHash('#about'); toggleMenu()">About</a></li>
+        <li><a @click.prevent="goToHomeHash('#products'); toggleMenu()">Products</a></li>
+        <li><a @click.prevent="goToHomeHash('#technologies'); toggleMenu()">Technologies</a></li>
+        <li><a @click.prevent="goToHomeHash('#contact'); toggleMenu()">Contact</a></li>
       </ul>
     </div>
   </header>
@@ -42,9 +43,16 @@
 
 <script setup>
 import { ref } from 'vue'
+import { useRouter } from 'vue-router'
+const router = useRouter()
 const menuOpen = ref(false)
 const toggleMenu = () => { menuOpen.value = !menuOpen.value }
-const goToContact = () => { window.location.href = '/contact' }
+const goToContact = () => { router.push('/contact') }
+
+function goToHomeHash(hash = '') {
+  // navigate to home then set hash for in-page sections
+  router.push({ path: '/', hash })
+}
 </script>
 
 <style scoped>
