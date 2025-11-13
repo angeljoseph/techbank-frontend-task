@@ -46,19 +46,22 @@ import 'swiper/css'
 import 'swiper/css/navigation'
 import 'swiper/css/pagination'
 import { Navigation, Pagination, Autoplay } from 'swiper/modules'
+// import images via @ alias for bundler-friendly imports
+import imgA from '@/assets/img/Group 1171276082.png'
+import imgB from '@/assets/img/Mask group-b1.png'
+import imgC from '@/assets/img/Mask group-b2.png'
+import emblemVector from '@/assets/img/Vector.png'
+
 const props = defineProps({
   heading: { type: String, default: 'Blogs' },
   subheading: { type: String, default: 'Techbank' },
   columns: { type: Array, default: () => ([
-  { img: '../assets/img/Group 1171276082.png', emblem: 'A', emblemImg: '../assets/img/Vector.png', title: 'Product A', description: 'Fast, secure integrations for enterprises.', footerHeading: 'dwallet', footerText: 'Enterprise-grade integrations for reliability', buttonLabel: 'Get started' },
-    { img: '../assets/img/Mask group-b1.png', emblem: 'A', emblemImg: '../assets/img/Vector.png', title: 'Product A', description: 'Fast, secure integrations for enterprises.', footerHeading: 'dwallet', footerText: 'Enterprise-grade integrations for reliability', buttonLabel: 'Get started' },
-
-  { img: '../assets/img/Mask group-b2.png', emblem: 'B', emblemImg: '../assets/img/Group 1171276123.png', title: 'Product B', description: 'Tools for developers to ship faster.', footerHeading: 'DBANK ', footerText: 'APIs, SDKs, and CLIs for productivity', buttonLabel: 'Try now' },
-   { img: '../assets/img/Group 1171276082.png', emblem: 'A', emblemImg: '../assets/img/Vector.png', title: 'Product A', description: 'Fast, secure integrations for enterprises.', footerHeading: 'dwallet', footerText: 'Enterprise-grade integrations for reliability', buttonLabel: 'Get started' },
-    { img: '../assets/img/Mask group-b1.png', emblem: 'A', emblemImg: '../assets/img/Vector.png', title: 'Product A', description: 'Fast, secure integrations for enterprises.', footerHeading: 'dwallet', footerText: 'Enterprise-grade integrations for reliability', buttonLabel: 'Get started' },
-
-  { img: '../assets/img/Mask group-b2.png', emblem: 'B', emblemImg: '../assets/img/Group 1171276123.png', title: 'Product B', description: 'Tools for developers to ship faster.', footerHeading: 'DBANK ', footerText: 'APIs, SDKs, and CLIs for productivity', buttonLabel: 'Try now' }
-  
+    { img: imgA, emblem: 'A', emblemImg: emblemVector, title: 'Product A', description: 'Fast, secure integrations for enterprises.', footerHeading: 'dwallet', footerText: 'Enterprise-grade integrations for reliability', buttonLabel: 'Get started' },
+    { img: imgB, emblem: 'A', emblemImg: emblemVector, title: 'Product A', description: 'Fast, secure integrations for enterprises.', footerHeading: 'dwallet', footerText: 'Enterprise-grade integrations for reliability', buttonLabel: 'Get started' },
+    { img: imgC, emblem: 'B', emblemImg: imgA, title: 'Product B', description: 'Tools for developers to ship faster.', footerHeading: 'DBANK ', footerText: 'APIs, SDKs, and CLIs for productivity', buttonLabel: 'Try now' },
+    { img: imgA, emblem: 'A', emblemImg: emblemVector, title: 'Product A', description: 'Fast, secure integrations for enterprises.', footerHeading: 'dwallet', footerText: 'Enterprise-grade integrations for reliability', buttonLabel: 'Get started' },
+    { img: imgB, emblem: 'A', emblemImg: emblemVector, title: 'Product A', description: 'Fast, secure integrations for enterprises.', footerHeading: 'dwallet', footerText: 'Enterprise-grade integrations for reliability', buttonLabel: 'Get started' },
+    { img: imgC, emblem: 'B', emblemImg: imgA, title: 'Product B', description: 'Tools for developers to ship faster.', footerHeading: 'DBANK ', footerText: 'APIs, SDKs, and CLIs for productivity', buttonLabel: 'Try now' }
   ]) }
 })
 

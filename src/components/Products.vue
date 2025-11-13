@@ -36,12 +36,18 @@
 </template>
 
 <script setup>
+// import images for bundler resolution via @ alias
+import prodA from '@/assets/img/Image0004.png'
+import prodB from '@/assets/img/Mask groupmobile.png'
+import vector from '@/assets/img/Vector.png'
+import group117 from '@/assets/img/Group 1171276123.png'
+
 const props = defineProps({
   heading: { type: String, default: 'Products' },
   subheading: { type: String, default: 'Innovative' },
   columns: { type: Array, default: () => ([
-  { img: '../assets/img/Image0004.png', emblem: 'A', emblemImg: '../assets/img/Vector.png', title: 'Product A', description: 'Fast, secure integrations for enterprises.', footerHeading: 'dwallet', footerText: 'Enterprise-grade integrations for reliability', buttonLabel: 'Get started' },
-  { img: '../assets/img/Mask groupmobile.png', emblem: 'B', emblemImg: '../assets/img/Group 1171276123.png', title: 'Product B', description: 'Tools for developers to ship faster.', footerHeading: 'DBANK ', footerText: 'APIs, SDKs, and CLIs for productivity', buttonLabel: 'Try now' }
+    { img: prodA, emblem: 'A', emblemImg: vector, title: 'Product A', description: 'Fast, secure integrations for enterprises.', footerHeading: 'dwallet', footerText: 'Enterprise-grade integrations for reliability', buttonLabel: 'Get started' },
+    { img: prodB, emblem: 'B', emblemImg: group117, title: 'Product B', description: 'Tools for developers to ship faster.', footerHeading: 'DBANK ', footerText: 'APIs, SDKs, and CLIs for productivity', buttonLabel: 'Try now' }
   ]) }
 })
 

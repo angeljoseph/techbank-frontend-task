@@ -14,7 +14,6 @@
 <script setup>
 import About from '../components/About.vue'
 import Products from '../components/Products.vue'
-import Blog from '../components/Blog.vue'
 import Slider from '../components/Slider.vue'
 import SubHeader from '../components/SubHeader.vue'
 
