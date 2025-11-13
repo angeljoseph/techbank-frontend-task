@@ -4,7 +4,7 @@
       <div class="footer-header">
         <div class="header-left">
       <div class="logo">
-  <img src="/images/group-1.png" alt="logo" class="logo-img" />
+  <img :src="logoSrc" alt="logo" class="logo-img" />
     </div>
         </div>
         <div class="header-right">
@@ -43,16 +43,16 @@
       <div class="footer-bottom">
         <div class="bottom-col social">
           <a href="#" aria-label="x" class="social-link">
-            <img src="/images/x.png" alt="X" class="social-icon" />
+            <img :src="socialX" alt="X" class="social-icon" />
           </a>
           <a href="#" aria-label="linkedin" class="social-link">
-            <img src="/images/linkedin.png" alt="LinkedIn" class="social-icon" />
+            <img :src="socialLinkedin" alt="LinkedIn" class="social-icon" />
           </a>
           <a href="#" aria-label="instagram" class="social-link">
-            <img src="/images/instagram.png" alt="Instagram" class="social-icon" />
+            <img :src="socialInsta" alt="Instagram" class="social-icon" />
           </a>
            <a href="#" aria-label="youtube" class="social-link">
-            <img src="/images/youtube.png" alt="Youtube" class="social-icon" />
+            <img :src="socialYouTube" alt="Youtube" class="social-icon" />
           </a>
         </div>
         <div class="bottom-col date">© 2025 Techbank</div>
@@ -67,23 +67,21 @@
 </template>
 
 <script setup>
-// small presentational footer — resolve background image for Vite
-const footerBg = new URL('../assets/img/Group 1597883874.png', import.meta.url).href
-// resolve images used in template
-const logoSrc = new URL('../assets/Group (1).png', import.meta.url).href
-const socialX = new URL('../assets/img/x.png', import.meta.url).href
-const socialLinkedin = new URL('../assets/img/LinkedinLogo.png', import.meta.url).href
-const socialInsta = new URL('../assets/img/instagram.png', import.meta.url).href
-const socialYouTube = new URL('../assets/img/youtube.png', import.meta.url).href
+// small presentational footer — import images via alias
+import footerBg from '@/assets/img/Group 1597883874.png'
+import logoSrc from '@/assets/img/Group (1).png'
+import socialX from '@/assets/img/x.png'
+import socialLinkedin from '@/assets/img/LinkedinLogo.png'
+import socialInsta from '@/assets/img/instagram.png'
+import socialYouTube from '@/assets/img/youtube.png'
 // provide today's date for the footer-bottom
 const today = new Date().toLocaleDateString();
 // arrow image for CTA (reuse product arrow)
-const arrowSrc = new URL('../assets/img/Vector1.png', import.meta.url).href
+import arrowSrc from '@/assets/img/Vector1.png'
 </script>
-
 <style scoped>
-.site-footer { background: #0b0b0b; color:#fff; padding:48px 16px; background-size: cover; background-position: center }
-.container { max-width:1200px; margin:0 auto }
+.site-footer { position: relative; left: 50%; transform: translateX(-50%); width: 100vw; background: #0b0b0b; color:#fff; padding:48px 0; background-size: cover; background-position: center; overflow: hidden }
+.site-footer .container { position: relative; max-width:1200px; margin:0 auto; z-index: 1; padding: 0 16px }
 .footer-header { display:flex; justify-content:space-between; gap:20px; margin-bottom:24px }
 .header-left h3, .header-right h3 { margin:0 0 6px 0 }
 .header-left p { margin:0; color: #C0C0C0 }
@@ -163,6 +161,23 @@ const arrowSrc = new URL('../assets/img/Vector1.png', import.meta.url).href
 @media (max-width: 900px) {
   .footer-header { flex-direction:column; align-items:flex-start }
   .footer-columns { grid-template-columns:1fr; }
+}
+
+/* small screens: center all footer items */
+@media (max-width: 760px) {
+  .site-footer .container { text-align: center }
+  .footer-header { align-items: center; text-align: center }
+  .header-right p { text-align: center }
+  .footer-columns { grid-template-columns: 1fr; gap: 12px }
+  .footer-columns .col { display:block; }
+  .footer-columns .col ul { display: inline-block; text-align: left }
+  .footer-bottom { grid-template-columns: 1fr; gap: 12px; text-align:center }
+  .footer-bottom .actions { justify-content: center }
+  .social-link { display:inline-block }
+  .footer-bottom .social
+  {
+    justify-content:center;
+  }
 }
 
 /* footer bottom row */

@@ -43,6 +43,11 @@ html, body {
   min-height: 100%;
   background-color: #1e1e1e;
 }
+
+/* prevent accidental horizontal scroll from full-bleed elements */
+body {
+  overflow-x: hidden;
+}
  #app {
   max-width: 1280px;
   margin: 0 auto;

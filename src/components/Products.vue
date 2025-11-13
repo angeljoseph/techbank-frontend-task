@@ -60,8 +60,8 @@ const getEmblemSrc = (p) => {
   return e ? (e.startsWith('/') ? e : new URL(e, import.meta.url).href) : ''
 }
 
-// arrow image source (resolved at build time)
-const arrowSrc = new URL('../assets/img/Vector1.png', import.meta.url).href
+// arrow image source (import via @ alias)
+import arrowSrc from '@/assets/img/Vector1.png'
 </script>
 
 <style scoped>

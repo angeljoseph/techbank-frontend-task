@@ -158,7 +158,7 @@ function stopAutoplay() {
 }
 
 // arrow image reuse to match Products.vue
-const arrowSrc = new URL('../assets/img/Vector1.png', import.meta.url).href
+import arrowSrc from '@/assets/img/Vector1.png'
 </script>
 
 <style scoped>

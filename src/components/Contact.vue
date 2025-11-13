@@ -64,8 +64,7 @@
 
 <script setup>
 import { reactive, ref, computed } from 'vue'
-
-const imgSrc = new URL('../assets/img/Image0004.png', import.meta.url).href
+import imgSrc from '@/assets/img/Image0004.png'
 const form = reactive({ name: '', email: '', message: '', phone: '', country: 'in' })
 
 // countries (small demo set)

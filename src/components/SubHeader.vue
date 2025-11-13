@@ -40,18 +40,24 @@
 </template>
 
 <script setup>
+// import common assets via alias so defaults are resolved by Vite
+import maskGroup from '@/assets/img/Mask group.png'
+import topGroup from '@/assets/img/Group 1597883877.png'
+import centerGroup from '@/assets/img/Group 1597883878.png'
+import compGif from '@/assets/img/comp.gif'
+
 const props = defineProps({
-  bgImage: { type: String, default: '../assets/img/Mask group.png' },
-  topImage: { type: String, default: '../assets/img/Group 1597883877.png' },
+  bgImage: { type: String, default: maskGroup },
+  topImage: { type: String, default: topGroup },
   topTitle: { type: String, default: 'At TechBank' },
   topText: { type: String, default: 'At TechBank, we’re pioneering the technologies of tomorrow. From blockchain to AI, we’re building the digital landscape of the future, today.' },
-  centerImage: { type: String, default: '../assets/img/Group 1597883878.png' },
-  centerMedia: { type: String, default: '../assets/img/comp.gif' },
+  centerImage: { type: String, default: centerGroup },
+  centerMedia: { type: String, default: compGif },
   centerMediaType: { type: String, default: 'gif' },
   fullHeight: { type: Boolean, default: true },
-  videoSrc: { type: String, default: '../assets/img/comp.gif' },
+  videoSrc: { type: String, default: compGif },
   gifSrc: { type: String, default: '' },
-  poster: { type: String, default: '../assets/img/Group 1597883878.png' },
+  poster: { type: String, default: centerGroup },
   title: { type: String, default: 'ENGINEERING\nTHE FUTURE' },
   subtitle: { type: String, default: 'Empowering Businesses Enabling Growth\nTechBank\u2019s Products for Success' }
 })
@@ -135,7 +141,7 @@ const centerMediaSrc = computed2(() => {
 })
 
 // arrow used in the View Products button - resolve so bundler rewrites path
-const btnArrow = new URL('../assets/img/Frame 24.png', import.meta.url).href
+import btnArrow from '@/assets/img/Frame 24.png'
 </script>
 
 <style scoped>
